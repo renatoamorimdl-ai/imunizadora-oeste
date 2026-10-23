@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "images": {
+    "sizes": [640, 1080, 1920],
+    "formats": ["image/avif", "image/webp"],
+    "minimumCacheTTL": 2678400,
+    "remotePatterns": [{ "protocol": "https", "hostname": "assets.morphix.pro" }]
+  },
+  "rewrites": [
+    { "source": "/assets/img/og-image.png", "destination": "https://assets.morphix.pro/b5ifkhx3.png" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}
