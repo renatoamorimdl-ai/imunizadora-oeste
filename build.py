@@ -24,5 +24,10 @@ html = tpl
 html = html.replace('<link rel="preload" as="image" href="{{IMG:caminhao-limpa-fossa-mossoro}}">',
     '<link rel="preload" as="image" imagesrcset="' + ', '.join(f'{opt("caminhao-limpa-fossa-mossoro", w)} {w}w' for w in WIDTHS) + '" imagesizes="(max-width: 900px) 100vw, 50vw">')
 html = re.sub(r'src="\{\{IMG:([\w-]+)\}\}"', img_attrs, html)
+# Versionamento de CSS/JS: a URL muda a cada alteração, evitando cache desatualizado no navegador
+import hashlib
+for asset in ('assets/css/style.css', 'assets/js/main.js'):
+    v = hashlib.sha1((root / asset).read_bytes()).hexdigest()[:10]
+    html = html.replace(f'"/{asset}"', f'"/{asset}?v={v}"')
 assert '{{' not in html
 (root / 'index.html').write_text(html)
