@@ -8,7 +8,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://imunizadoraoeste.vercel.app/">
 <meta name="theme-color" content="#214E97">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 
 <!-- Geo / SEO local -->
 <meta name="geo.region" content="BR-RN">
@@ -158,212 +158,7 @@
 }
 </script>
 
-<style>
-:root{
-  --blue:#214E97; --blue-900:#14326a; --blue-950:#0c2149; --blue-50:#eef3fb;
-  --red:#F12534; --red-700:#c81825;
-  --ink:#16202f; --muted:#5a6678; --line:#e3e8f0; --bg:#ffffff; --soft:#f6f8fc;
-  --radius:14px; --shadow:0 10px 30px rgba(20,50,106,.12);
-  --wa:#1fae55;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit}
-.container{width:min(1160px,100% - 32px);margin-inline:auto}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:999;background:#fff;padding:8px 12px}
-
-/* Header */
-.topbar{background:var(--blue-950);color:#cfdaf0;font-size:.82rem}
-.topbar .container{display:flex;gap:18px;justify-content:space-between;align-items:center;padding:7px 0;flex-wrap:wrap}
-.topbar a{text-decoration:none;color:#fff;font-weight:600}
-header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
-header.site .container{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
-.brand svg{height:46px;width:auto}
-nav.main ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
-nav.main a{display:block;padding:8px 11px;font-weight:600;font-size:.88rem;text-decoration:none;color:var(--ink);border-radius:8px}
-nav.main a:hover{background:var(--blue-50);color:var(--blue)}
-.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer}
-.menu-btn span{display:block;width:24px;height:3px;background:var(--blue);margin:4px 0;border-radius:2px}
-
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:10px;padding:14px 22px;border:2px solid transparent;cursor:pointer;font-family:inherit;font-size:1rem;transition:transform .15s,box-shadow .15s,background .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(241,37,52,.3)}
-.btn-red:hover{background:var(--red-700)}
-.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px rgba(31,174,85,.28)}
-.btn-ghost{border-color:#fff;color:#fff}
-.btn-sm{padding:10px 16px;font-size:.9rem}
-.btn svg{width:20px;height:20px;flex:none}
-
-/* Hero */
-.hero{position:relative;color:#fff;overflow:hidden;background:var(--blue-950)}
-.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(12,33,73,.96) 0%,rgba(20,50,106,.82) 45%,rgba(20,50,106,.2) 100%)}
-.hero .container{position:relative;z-index:1;padding:96px 0 104px}
-.badge{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:4px}
-.hero h1{font-size:clamp(2rem,4.6vw,3.5rem);line-height:1.08;margin:18px 0 16px;font-weight:900;max-width:760px;letter-spacing:-.01em}
-.hero h1 em{font-style:normal;color:#ffd0d4}
-.hero p.lead{font-size:clamp(1rem,1.6vw,1.2rem);max-width:600px;color:#dbe5f7;margin:0 0 30px}
-.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.hero-stats{display:flex;gap:36px;margin-top:48px;flex-wrap:wrap}
-.hero-stats strong{display:block;font-size:2rem;font-weight:900;line-height:1}
-.hero-stats span{font-size:.85rem;color:#c3d1ec}
-
-/* Sections */
-section{padding:88px 0}
-.eyebrow{color:var(--red);font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
-h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.15;margin:0 0 16px;color:var(--blue-950);font-weight:900}
-.sec-head{max-width:720px;margin-bottom:44px}
-.sec-head p{color:var(--muted);margin:0}
-.soft{background:var(--soft)}
-
-/* Quem somos */
-.about>*,.loc>*,.quote-grid>*,.services>*,.reviews>*,.diffs>*{min-width:0}
-.about{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
-.about-img{position:relative}
-.about-img img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
-.about-img .since{position:absolute;right:-14px;bottom:-22px;background:var(--red);color:#fff;border-radius:12px;padding:16px 20px;text-align:center;box-shadow:var(--shadow)}
-.about-img .since strong{display:block;font-size:2.1rem;font-weight:900;line-height:1}
-.about-img .since span{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
-.about p{color:var(--muted)}
-.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
-.checks li{display:flex;gap:10px;align-items:flex-start;font-weight:600}
-.checks li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat;margin-top:2px}
-
-/* Serviços */
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.card .body{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
-.card h3{margin:0;font-size:1.15rem;color:var(--blue-950);font-weight:800}
-.card p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
-.card .link{margin-top:10px;font-weight:700;color:var(--red);text-decoration:none}
-.minis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
-.mini{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;gap:12px;align-items:center;font-weight:700;color:var(--blue-950);font-size:.95rem}
-.ico{flex:none;width:44px;height:44px;border-radius:10px;background:var(--blue-50);display:grid;place-items:center;color:var(--blue)}
-.ico svg{width:24px;height:24px}
-
-/* Clientes */
-.segments{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.seg{border:1px solid var(--line);border-radius:12px;padding:22px 12px;text-align:center;font-weight:700;color:var(--blue-950);background:#fff;font-size:.9rem}
-.seg .ico{margin:0 auto 10px}
-.clients-note{margin-top:20px;color:var(--muted);font-size:.92rem}
-
-/* Feedbacks */
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:0 4px 18px rgba(20,50,106,.07);position:relative}
-.stars{color:#f5b301;letter-spacing:2px;font-size:1.05rem}
-.review p{color:var(--ink);margin:12px 0 16px}
-.review footer{display:flex;align-items:center;gap:10px;font-size:.9rem}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800}
-.review small{color:var(--muted);display:block}
-.tag-exemplo{position:absolute;top:12px;right:12px;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:#fff3cd;color:#7a5a00;padding:3px 7px;border-radius:4px}
-.reviews-cta{text-align:center;margin-top:30px}
-
-/* Diferenciais */
-.diffs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.diff{padding:28px;border-radius:var(--radius);background:linear-gradient(160deg,var(--blue) 0%,var(--blue-900) 100%);color:#fff}
-.diff .ico{background:rgba(255,255,255,.14);color:#fff;margin-bottom:14px}
-.diff h3{margin:0 0 6px;font-size:1.1rem;font-weight:800}
-.diff p{margin:0;color:#d4def2;font-size:.94rem}
-
-/* FAQ */
-.faq{max-width:860px}
-.faq details{border:1px solid var(--line);border-radius:12px;padding:0 20px;margin-bottom:12px;background:#fff}
-.faq summary{cursor:pointer;font-weight:700;padding:18px 0;color:var(--blue-950);list-style:none;display:flex;justify-content:space-between;gap:12px}
-.faq summary::after{content:"+";color:var(--red);font-size:1.4rem;line-height:1}
-.faq details[open] summary::after{content:"–"}
-.faq details p{margin:0 0 18px;color:var(--muted)}
-
-/* Localização */
-.loc{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:stretch}
-.loc-info{background:var(--blue-950);color:#fff;border-radius:var(--radius);padding:32px}
-.loc-info h3{margin:0 0 18px;font-size:1.3rem}
-.loc-info dl{margin:0;display:grid;gap:16px}
-.loc-info dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:#9fb3da;font-weight:700}
-.loc-info dd{margin:2px 0 0;font-weight:600}
-.loc-info a{color:#fff}
-.map{border-radius:var(--radius);overflow:hidden;min-height:380px;border:1px solid var(--line);background:var(--soft)}
-.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
-
-/* Formulário */
-.quote{background:linear-gradient(135deg,var(--blue-950),var(--blue));color:#fff}
-.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
-.quote h2{color:#fff}
-.quote .sub{color:#d4def2}
-.quote-perks{list-style:none;padding:0;margin:24px 0;display:grid;gap:12px}
-.quote-perks li{display:flex;gap:10px;align-items:center;font-weight:600}
-.quote-perks li span{width:28px;height:28px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:.85rem;font-weight:900}
-form.lead{background:#fff;color:var(--ink);border-radius:18px;padding:30px;box-shadow:0 24px 60px rgba(0,0,0,.25);display:grid;grid-template-columns:1fr 1fr;gap:14px}
-form.lead .full{grid-column:1/-1}
-form.lead label{display:block;font-size:.8rem;font-weight:700;color:var(--blue-950);margin-bottom:5px}
-form.lead input,form.lead select,form.lead textarea{width:100%;font:inherit;font-size:.95rem;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
-form.lead input:focus,form.lead select:focus,form.lead textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(33,78,151,.15)}
-form.lead textarea{min-height:92px;resize:vertical}
-form.lead .btn{width:100%}
-.form-legal{font-size:.75rem;color:var(--muted);margin:0}
-.form-ok{display:none;grid-column:1/-1;background:#e8f7ee;color:#11633a;border-radius:10px;padding:14px;font-weight:600}
-form.lead.sent .form-ok{display:block}
-.hp{position:absolute;left:-5000px}
-
-/* Footer */
-footer.site{background:var(--blue-950);color:#b9c7e3;padding:56px 0 24px;font-size:.92rem}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
-footer.site h4{color:#fff;margin:0 0 12px;font-size:1rem}
-footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
-footer.site a{text-decoration:none;color:#dfe7f6}
-footer.site a:hover{color:#fff;text-decoration:underline}
-.foot .brand svg{height:48px}
-.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:18px;font-size:.8rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-/* Flutuantes */
-.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.25);color:#fff}
-.wa-float svg{width:32px;height:32px}
-.mobile-bar{display:none}
-.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;max-width:560px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:18px;font-size:.88rem;display:none}
-.cookie.show{display:block}
-.cookie .row{display:flex;gap:10px;margin-top:12px;justify-content:flex-end}
-.cookie button{font:inherit;font-weight:700;border-radius:8px;padding:9px 14px;cursor:pointer;border:1.5px solid var(--line);background:#fff}
-.cookie button.ok{background:var(--blue);color:#fff;border-color:var(--blue)}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-
-/* Responsivo */
-@media (max-width:1020px){
-  nav.main{position:fixed;inset:72px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);display:none;padding:10px 16px 18px}
-  nav.main.open{display:block}
-  nav.main ul{flex-direction:column}
-  .menu-btn{display:block}
-  .head-cta{display:none}
-  .services,.reviews,.diffs{grid-template-columns:1fr 1fr}
-  .segments{grid-template-columns:repeat(3,1fr)}
-  .minis{grid-template-columns:1fr 1fr}
-  .about,.loc,.quote-grid{grid-template-columns:1fr}
-  .foot{grid-template-columns:1fr 1fr}
-}
-@media (max-width:640px){
-  section{padding:64px 0}
-  .topbar .hide-sm{display:none}
-  .brand svg{height:38px}
-  .hero .container{padding:64px 0 72px}
-  .hero-stats{gap:22px}
-  .services,.reviews,.diffs,.minis,.foot{grid-template-columns:1fr}
-  .segments{grid-template-columns:1fr 1fr}
-  form.lead{grid-template-columns:1fr;padding:22px}
-  .about-img .since{right:10px}
-  .wa-float{display:none}
-  .mobile-bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 20px rgba(0,0,0,.12)}
-  .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 8px;font-weight:800;color:#fff;text-decoration:none}
-  .mobile-bar svg{width:20px;height:20px}
-  body{padding-bottom:54px}
-  .cookie{bottom:66px}
-}
-</style>
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -404,12 +199,7 @@ footer.site a:hover{color:#fff;text-decoration:underline}
 
 <header class="site">
   <div class="container">
-    <a href="#inicio" class="brand" aria-label="Imunizadora Oeste – página inicial"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 168" aria-hidden="true" aria-label="Imunizadora Oeste">
-
-<rect x="158.5" y="8" width="401.6" height="34" fill="#F12534"/>
-<g fill="#fff"><path transform="translate(237.38 32.92) scale(0.02200 -0.02200)" d="M83 0V700H245V0Z"/><path transform="translate(251.80 32.92) scale(0.02200 -0.02200)" d="M83 0V700H217L479 265L737 700H870L872 0H720L719 420L513 74H440L235 411V0Z"/><path transform="translate(280.01 32.92) scale(0.02200 -0.02200)" d="M394 -12Q245 -12 161.0 71.0Q77 154 77 308V700H239V314Q239 214 280.0 170.0Q321 126 395 126Q469 126 510.0 170.0Q551 214 551 314V700H711V308Q711 154 627.0 71.0Q543 -12 394 -12Z"/><path transform="translate(304.54 32.92) scale(0.02200 -0.02200)" d="M83 0V700H217L565 275V700H725V0H592L243 425V0Z"/><path transform="translate(329.52 32.92) scale(0.02200 -0.02200)" d="M83 0V700H245V0Z"/><path transform="translate(343.93 32.92) scale(0.02200 -0.02200)" d="M38 0V105L422 568H46V700H635V595L252 132H650V0Z"/><path transform="translate(365.90 32.92) scale(0.02200 -0.02200)" d="M-9 0 303 700H463L776 0H606L544 150H219L157 0ZM493 273 382 541 271 273Z"/><path transform="translate(389.95 32.92) scale(0.02200 -0.02200)" d="M83 0V700H401Q515 700 602.0 656.5Q689 613 738.0 535.0Q787 457 787 350Q787 244 738.0 165.5Q689 87 602.0 43.5Q515 0 401 0ZM245 133H393Q463 133 514.5 159.5Q566 186 594.5 235.0Q623 284 623 350Q623 417 594.5 465.5Q566 514 514.5 540.5Q463 567 393 567H245Z"/><path transform="translate(415.32 32.92) scale(0.02200 -0.02200)" d="M423 -12Q340 -12 269.5 15.0Q199 42 147.5 91.0Q96 140 67.5 206.0Q39 272 39 350Q39 428 67.5 494.0Q96 560 148.0 609.0Q200 658 270.0 685.0Q340 712 422 712Q505 712 574.5 685.0Q644 658 695.5 609.0Q747 560 776.0 494.5Q805 429 805 350Q805 272 776.0 205.5Q747 139 695.5 90.5Q644 42 574.5 15.0Q505 -12 423 -12ZM422 126Q469 126 508.5 142.0Q548 158 578.0 188.0Q608 218 624.5 259.0Q641 300 641 350Q641 400 624.5 441.0Q608 482 578.5 512.0Q549 542 509.0 558.0Q469 574 422 574Q375 574 335.5 558.0Q296 542 266.0 512.0Q236 482 219.5 441.0Q203 400 203 350Q203 301 219.5 259.5Q236 218 265.5 188.0Q295 158 335.0 142.0Q375 126 422 126Z"/><path transform="translate(441.09 32.92) scale(0.02200 -0.02200)" d="M83 0V700H386Q480 700 548.0 669.5Q616 639 653.0 582.0Q690 525 690 446Q690 368 653.0 311.5Q616 255 548 225Q547 225 547 224L703 0H528L394 195Q390 195 386 195H245V0ZM245 324H377Q452 324 489.0 356.5Q526 389 526 446Q526 504 489.0 536.0Q452 568 377 568H245Z"/><path transform="translate(464.46 32.92) scale(0.02200 -0.02200)" d="M-9 0 303 700H463L776 0H606L544 150H219L157 0ZM493 273 382 541 271 273Z"/></g>
-
-<g fill="#214E97"><path transform="translate(10.00 158) scale(0.15000 -0.15000)" d="M788 344Q788 170 691.0 79.0Q594 -12 416 -12Q238 -12 141.5 78.5Q45 169 45 344Q45 519 141.5 609.5Q238 700 416 700Q594 700 691.0 609.0Q788 518 788 344ZM271 376V312Q271 239 308.0 196.0Q345 153 416 153Q487 153 524.5 196.0Q562 239 562 312V376Q562 449 524.5 492.0Q487 535 416 535Q345 535 308.0 492.0Q271 449 271 376Z"/><path transform="translate(132.95 158) scale(0.15000 -0.15000)" d="M74 688H669V523H295V428H615V270H295V165H676V0H74Z"/><path transform="translate(239.25 158) scale(0.15000 -0.15000)" d="M667 488V476H460V480Q460 510 438.0 530.0Q416 550 371 550Q327 550 303.5 537.0Q280 524 280 505Q280 478 312.0 465.0Q344 452 415 438Q498 421 551.5 402.5Q605 384 645.0 342.0Q685 300 686 228Q686 106 603.5 47.0Q521 -12 383 -12Q222 -12 132.5 42.0Q43 96 43 233H252Q252 181 279.0 163.5Q306 146 363 146Q405 146 432.5 155.0Q460 164 460 192Q460 217 429.5 229.5Q399 242 330 256Q246 274 191.0 293.5Q136 313 95.0 358.0Q54 403 54 480Q54 593 141.5 646.5Q229 700 363 700Q495 700 580.0 646.5Q665 593 667 488Z"/><path transform="translate(345.55 158) scale(0.15000 -0.15000)" d="M470 512V0H249V512H23V688H695V512Z"/><path transform="translate(451.85 158) scale(0.15000 -0.15000)" d="M74 688H669V523H295V428H615V270H295V165H676V0H74Z"/></g><path d="M6 80 Q65 44 138 72" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/></svg></a>
+    <a href="#inicio" class="brand" aria-label="Imunizadora Oeste – página inicial"><img src="/assets/img/logo-imunizadora-oeste.svg" alt="Imunizadora Oeste" width="570" height="168"></a>
     <nav class="main" id="menu" aria-label="Menu principal">
       <ul>
         <li><a href="#quem-somos">Quem somos</a></li>
@@ -676,12 +466,7 @@ footer.site a:hover{color:#fff;text-decoration:underline}
   <div class="container">
     <div class="foot">
       <div>
-        <a href="#inicio" class="brand" aria-label="Imunizadora Oeste"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 168" aria-hidden="true" aria-label="Imunizadora Oeste">
-
-<rect x="158.5" y="8" width="401.6" height="34" fill="#F12534"/>
-<g fill="#fff"><path transform="translate(237.38 32.92) scale(0.02200 -0.02200)" d="M83 0V700H245V0Z"/><path transform="translate(251.80 32.92) scale(0.02200 -0.02200)" d="M83 0V700H217L479 265L737 700H870L872 0H720L719 420L513 74H440L235 411V0Z"/><path transform="translate(280.01 32.92) scale(0.02200 -0.02200)" d="M394 -12Q245 -12 161.0 71.0Q77 154 77 308V700H239V314Q239 214 280.0 170.0Q321 126 395 126Q469 126 510.0 170.0Q551 214 551 314V700H711V308Q711 154 627.0 71.0Q543 -12 394 -12Z"/><path transform="translate(304.54 32.92) scale(0.02200 -0.02200)" d="M83 0V700H217L565 275V700H725V0H592L243 425V0Z"/><path transform="translate(329.52 32.92) scale(0.02200 -0.02200)" d="M83 0V700H245V0Z"/><path transform="translate(343.93 32.92) scale(0.02200 -0.02200)" d="M38 0V105L422 568H46V700H635V595L252 132H650V0Z"/><path transform="translate(365.90 32.92) scale(0.02200 -0.02200)" d="M-9 0 303 700H463L776 0H606L544 150H219L157 0ZM493 273 382 541 271 273Z"/><path transform="translate(389.95 32.92) scale(0.02200 -0.02200)" d="M83 0V700H401Q515 700 602.0 656.5Q689 613 738.0 535.0Q787 457 787 350Q787 244 738.0 165.5Q689 87 602.0 43.5Q515 0 401 0ZM245 133H393Q463 133 514.5 159.5Q566 186 594.5 235.0Q623 284 623 350Q623 417 594.5 465.5Q566 514 514.5 540.5Q463 567 393 567H245Z"/><path transform="translate(415.32 32.92) scale(0.02200 -0.02200)" d="M423 -12Q340 -12 269.5 15.0Q199 42 147.5 91.0Q96 140 67.5 206.0Q39 272 39 350Q39 428 67.5 494.0Q96 560 148.0 609.0Q200 658 270.0 685.0Q340 712 422 712Q505 712 574.5 685.0Q644 658 695.5 609.0Q747 560 776.0 494.5Q805 429 805 350Q805 272 776.0 205.5Q747 139 695.5 90.5Q644 42 574.5 15.0Q505 -12 423 -12ZM422 126Q469 126 508.5 142.0Q548 158 578.0 188.0Q608 218 624.5 259.0Q641 300 641 350Q641 400 624.5 441.0Q608 482 578.5 512.0Q549 542 509.0 558.0Q469 574 422 574Q375 574 335.5 558.0Q296 542 266.0 512.0Q236 482 219.5 441.0Q203 400 203 350Q203 301 219.5 259.5Q236 218 265.5 188.0Q295 158 335.0 142.0Q375 126 422 126Z"/><path transform="translate(441.09 32.92) scale(0.02200 -0.02200)" d="M83 0V700H386Q480 700 548.0 669.5Q616 639 653.0 582.0Q690 525 690 446Q690 368 653.0 311.5Q616 255 548 225Q547 225 547 224L703 0H528L394 195Q390 195 386 195H245V0ZM245 324H377Q452 324 489.0 356.5Q526 389 526 446Q526 504 489.0 536.0Q452 568 377 568H245Z"/><path transform="translate(464.46 32.92) scale(0.02200 -0.02200)" d="M-9 0 303 700H463L776 0H606L544 150H219L157 0ZM493 273 382 541 271 273Z"/></g>
-
-<g fill="#fff"><path transform="translate(10.00 158) scale(0.15000 -0.15000)" d="M788 344Q788 170 691.0 79.0Q594 -12 416 -12Q238 -12 141.5 78.5Q45 169 45 344Q45 519 141.5 609.5Q238 700 416 700Q594 700 691.0 609.0Q788 518 788 344ZM271 376V312Q271 239 308.0 196.0Q345 153 416 153Q487 153 524.5 196.0Q562 239 562 312V376Q562 449 524.5 492.0Q487 535 416 535Q345 535 308.0 492.0Q271 449 271 376Z"/><path transform="translate(132.95 158) scale(0.15000 -0.15000)" d="M74 688H669V523H295V428H615V270H295V165H676V0H74Z"/><path transform="translate(239.25 158) scale(0.15000 -0.15000)" d="M667 488V476H460V480Q460 510 438.0 530.0Q416 550 371 550Q327 550 303.5 537.0Q280 524 280 505Q280 478 312.0 465.0Q344 452 415 438Q498 421 551.5 402.5Q605 384 645.0 342.0Q685 300 686 228Q686 106 603.5 47.0Q521 -12 383 -12Q222 -12 132.5 42.0Q43 96 43 233H252Q252 181 279.0 163.5Q306 146 363 146Q405 146 432.5 155.0Q460 164 460 192Q460 217 429.5 229.5Q399 242 330 256Q246 274 191.0 293.5Q136 313 95.0 358.0Q54 403 54 480Q54 593 141.5 646.5Q229 700 363 700Q495 700 580.0 646.5Q665 593 667 488Z"/><path transform="translate(345.55 158) scale(0.15000 -0.15000)" d="M470 512V0H249V512H23V688H695V512Z"/><path transform="translate(451.85 158) scale(0.15000 -0.15000)" d="M74 688H669V523H295V428H615V270H295V165H676V0H74Z"/></g><path d="M6 80 Q65 44 138 72" stroke="#0c2149" stroke-width="6" fill="none" stroke-linecap="round"/></svg></a>
+        <a href="#inicio" class="brand" aria-label="Imunizadora Oeste"><img src="/assets/img/logo-imunizadora-oeste-branco.svg" alt="Imunizadora Oeste" width="570" height="168" loading="lazy"></a>
         <p style="margin-top:14px">Limpeza de fossa, sumidouro e locação de banheiros químicos em Mossoró-RN desde 1978.</p>
       </div>
       <div>
@@ -722,133 +507,6 @@ footer.site a:hover{color:#fff;text-decoration:underline}
   <div class="row"><button type="button" id="ck-no">Recusar</button><button type="button" class="ok" id="ck-yes">Aceitar</button></div>
 </div>
 
-<script>
-(function(){
-  var C = window.SITE_CONFIG, dl = window.dataLayer;
-  function track(event, params){
-    params = params || {};
-    dl.push(Object.assign({event: event}, params));
-    if (window.fbq) {
-      var map = {click_whatsapp:'Contact', click_phone:'Contact', generate_lead:'Lead', form_start:'InitiateCheckout'};
-      if (map[event]) fbq('track', map[event], params);
-    }
-  }
-  window.ioTrack = track;
-
-  // Store helper (tolerante a navegador sem storage)
-  var store = {
-    get: function(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
-    set: function(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
-  };
-
-  // Atribuição: UTMs / gclid / fbclid (first-touch + last-touch)
-  var qs = new URLSearchParams(location.search), keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
-  var attr = {}; keys.forEach(function(k){ if (qs.get(k)) attr[k] = qs.get(k); });
-  if (Object.keys(attr).length) {
-    attr.landing_page = location.href; attr.referrer = document.referrer;
-    store.set('io_last_touch', JSON.stringify(attr));
-    if (!store.get('io_first_touch')) store.set('io_first_touch', JSON.stringify(attr));
-  }
-  var saved = {}; try { saved = JSON.parse(store.get('io_last_touch') || '{}'); } catch(e){}
-  var form = document.getElementById('form-orcamento');
-  keys.concat(['landing_page','referrer']).forEach(function(k){
-    var el = form.elements[k]; if (el) el.value = saved[k] || (k==='landing_page' ? location.href : k==='referrer' ? document.referrer : '');
-  });
-
-  // WhatsApp
-  function waLink(text){ return 'https://wa.me/' + C.whatsapp + '?text=' + encodeURIComponent(text); }
-  document.querySelectorAll('.js-wa').forEach(function(a){
-    a.href = waLink('Olá, Imunizadora Oeste! Vim pelo site e gostaria de um orçamento.');
-    a.target = '_blank'; a.rel = 'noopener';
-  });
-
-  // Cliques rastreados
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('[data-track]'); if (!el || el.tagName === 'DETAILS') return;
-    track(el.dataset.track, {click_location: el.dataset.loc || '', service: el.dataset.service || '', link_url: el.href || ''});
-    if (el.dataset.service) { var s = document.getElementById('f-serv'); var map={limpeza_fossa:1,banheiro_eventos:2,banheiro_obras:3}; s.selectedIndex = map[el.dataset.service]||0; }
-  });
-  document.querySelectorAll('details[data-track]').forEach(function(d){
-    d.addEventListener('toggle', function(){ if (d.open) track('faq_open', {question: d.querySelector('summary').textContent}); });
-  });
-
-  // Visualização de seções
-  if ('IntersectionObserver' in window) {
-    var seen = {};
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (en.isIntersecting) {
-          en.target.classList.add('in');
-          var sec = en.target.id;
-          if (sec && !seen[sec]) { seen[sec] = 1; track('section_view', {section: sec}); }
-        }
-      });
-    }, {threshold: .25});
-    document.querySelectorAll('.reveal, main > section[id]').forEach(function(el){ io.observe(el); });
-  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
-
-  // Profundidade de rolagem
-  var marks = [25,50,75,90], hit = {};
-  addEventListener('scroll', function(){
-    var p = (scrollY + innerHeight) / document.documentElement.scrollHeight * 100;
-    marks.forEach(function(m){ if (p >= m && !hit[m]) { hit[m] = 1; track('scroll_depth', {percent: m}); } });
-  }, {passive: true});
-
-  // Formulário
-  var started = false;
-  form.addEventListener('focusin', function(){ if (!started) { started = true; track('form_start', {form_id: 'orcamento'}); } });
-  var tel = document.getElementById('f-tel');
-  tel.addEventListener('input', function(){
-    var d = tel.value.replace(/\D/g,'').slice(0,11), o = d;
-    if (d.length > 2) o = '(' + d.slice(0,2) + ') ' + d.slice(2);
-    if (d.length > 7) o = '(' + d.slice(0,2) + ') ' + d.slice(2, d.length-4) + '-' + d.slice(-4);
-    tel.value = o;
-  });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (form.elements.empresa_site.value) return; // honeypot
-    var ok = true;
-    ['nome','telefone','servico','cidade'].forEach(function(n){
-      var el = form.elements[n], bad = !el.value.trim() || (n==='telefone' && el.value.replace(/\D/g,'').length < 10);
-      el.style.borderColor = bad ? 'var(--red)' : ''; if (bad) ok = false;
-    });
-    if (!ok) { track('form_error', {form_id: 'orcamento'}); return; }
-    var data = Object.fromEntries(new FormData(form).entries()); delete data.empresa_site;
-    var first = {}; try { first = JSON.parse(store.get('io_first_touch') || '{}'); } catch(err){}
-    data.first_touch_source = first.utm_source || '';
-    // Enhanced Conversions: dados do usuário (o GTM faz o hash)
-    dl.push({user_data: {email: data.email || undefined, phone_number: '+55' + data.telefone.replace(/\D/g,'')}});
-    track('generate_lead', {form_id: 'orcamento', service: data.servico, client_type: data.tipo_cliente, city: data.cidade, value: 1, currency: 'BRL'});
-    if (C.leadWebhook) { try { navigator.sendBeacon(C.leadWebhook, new Blob([JSON.stringify(data)], {type: 'application/json'})); } catch(err){} }
-    form.classList.add('sent');
-    var msg = 'Olá, Imunizadora Oeste! Gostaria de um orçamento.\n\n' +
-      'Nome: ' + data.nome + '\nServiço: ' + data.servico + '\nCidade/bairro: ' + data.cidade +
-      '\nTipo: ' + data.tipo_cliente + (data.data ? '\nData: ' + data.data.split('-').reverse().join('/') : '') +
-      (data.mensagem ? '\nDetalhes: ' + data.mensagem : '');
-    window.open(waLink(msg), '_blank', 'noopener');
-  });
-
-  // Menu mobile
-  var btn = document.querySelector('.menu-btn'), menu = document.getElementById('menu');
-  btn.addEventListener('click', function(){ var o = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', o); });
-  menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
-
-  // Consentimento LGPD
-  var ck = document.getElementById('cookie');
-  if (!store.get('io_consent')) ck.classList.add('show');
-  function setConsent(v){
-    store.set('io_consent', v); ck.classList.remove('show');
-    var g = v === 'granted' ? 'granted' : 'denied';
-    gtag('consent', 'update', {ad_storage:g, ad_user_data:g, ad_personalization:g, analytics_storage:g});
-    if (window.fbq) fbq('consent', v === 'granted' ? 'grant' : 'revoke');
-    track('consent_update', {consent: v});
-  }
-  document.getElementById('ck-yes').onclick = function(){ setConsent('granted'); };
-  document.getElementById('ck-no').onclick = function(){ setConsent('denied'); };
-  document.getElementById('cookie-prefs').onclick = function(e){ e.preventDefault(); ck.classList.add('show'); };
-
-  document.getElementById('ano').textContent = new Date().getFullYear();
-})();
-</script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>

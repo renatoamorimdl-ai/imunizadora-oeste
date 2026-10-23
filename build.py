@@ -20,10 +20,7 @@ def img_attrs(m):
     sizes = '100vw' if name == 'caminhao-limpa-fossa-mossoro' else '(max-width: 1020px) 100vw, 50vw'
     srcset = ', '.join(f'{opt(name, w)} {w}w' for w in WIDTHS)
     return f'src="{opt(name, 1080)}" srcset="{srcset}" sizes="{sizes}"'
-def strip(svg): return re.sub(r'<title>.*?</title>', '', svg).replace('role="img" ', 'aria-hidden="true" ')
-logo = strip((root / 'assets/img/logo-imunizadora-oeste.svg').read_text())
-logo_w = strip((root / 'assets/img/logo-imunizadora-oeste-branco.svg').read_text())
-html = tpl.replace('{{LOGO}}', logo).replace('{{LOGO_WHITE}}', logo_w)
+html = tpl
 html = html.replace('<link rel="preload" as="image" href="{{IMG:caminhao-limpa-fossa-mossoro}}">',
     '<link rel="preload" as="image" imagesrcset="' + ', '.join(f'{opt("caminhao-limpa-fossa-mossoro", w)} {w}w' for w in WIDTHS) + '" imagesizes="100vw">')
 html = re.sub(r'src="\{\{IMG:([\w-]+)\}\}"', img_attrs, html)
