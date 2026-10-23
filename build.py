@@ -17,12 +17,12 @@ WIDTHS = [640, 1080, 1920]
 def opt(name, w): return f'/_vercel/image?url={quote(MORPHIX[name], safe="")}&amp;w={w}&amp;q=75'
 def img_attrs(m):
     name = m.group(1)
-    sizes = '100vw' if name == 'caminhao-limpa-fossa-mossoro' else '(max-width: 1020px) 100vw, 50vw'
+    sizes = '(max-width: 900px) 100vw, 50vw'
     srcset = ', '.join(f'{opt(name, w)} {w}w' for w in WIDTHS)
     return f'src="{opt(name, 1080)}" srcset="{srcset}" sizes="{sizes}"'
 html = tpl
 html = html.replace('<link rel="preload" as="image" href="{{IMG:caminhao-limpa-fossa-mossoro}}">',
-    '<link rel="preload" as="image" imagesrcset="' + ', '.join(f'{opt("caminhao-limpa-fossa-mossoro", w)} {w}w' for w in WIDTHS) + '" imagesizes="100vw">')
+    '<link rel="preload" as="image" imagesrcset="' + ', '.join(f'{opt("caminhao-limpa-fossa-mossoro", w)} {w}w' for w in WIDTHS) + '" imagesizes="(max-width: 900px) 100vw, 50vw">')
 html = re.sub(r'src="\{\{IMG:([\w-]+)\}\}"', img_attrs, html)
 assert '{{' not in html
 (root / 'index.html').write_text(html)

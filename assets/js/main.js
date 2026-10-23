@@ -33,7 +33,7 @@
   // WhatsApp
   function waLink(text){ return 'https://wa.me/' + C.whatsapp + '?text=' + encodeURIComponent(text); }
   document.querySelectorAll('.js-wa').forEach(function(a){
-    a.href = waLink('Olá, Imunizadora Oeste! Vim pelo site e gostaria de um orçamento.');
+    a.href = waLink(a.dataset.waMsg || 'Olá, Imunizadora Oeste! Vim pelo site e gostaria de um orçamento.');
     a.target = '_blank'; a.rel = 'noopener';
   });
 
