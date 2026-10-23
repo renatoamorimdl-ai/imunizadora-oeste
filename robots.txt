@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://imunizadoraoeste.vercel.app/sitemap.xml
+Sitemap: https://imunizadora-oeste.vercel.app/sitemap.xml

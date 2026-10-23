@@ -17,4 +17,4 @@ Site estático (HTML/CSS/JS puro) da Imunizadora Oeste, Mossoró-RN. Hospedado n
 `service_click`, `section_view`, `scroll_depth`, `faq_open`, `click_directions`, `click_reviews`, `consent_update`.
 
 ## Domínio próprio
-Ao conectar o domínio, troque `imunizadoraoeste.vercel.app` em `src/template.html`, `robots.txt` e `sitemap.xml`.
+Ao conectar o domínio, troque `imunizadora-oeste.vercel.app` em `src/template.html`, `robots.txt` e `sitemap.xml`.
