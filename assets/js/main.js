@@ -41,7 +41,7 @@
   document.addEventListener('click', function(e){
     var el = e.target.closest('[data-track]'); if (!el || el.tagName === 'DETAILS') return;
     track(el.dataset.track, {click_location: el.dataset.loc || '', service: el.dataset.service || '', link_url: el.href || ''});
-    if (el.dataset.service) { var s = document.getElementById('f-serv'); var map={limpeza_fossa:1,banheiro_eventos:2,banheiro_obras:3}; s.selectedIndex = map[el.dataset.service]||0; }
+    if (el.dataset.service) { var s = document.getElementById('f-serv'); var map={limpeza_fossa:1,desentupimento:2,efluentes_industriais:3,locacao_banheiros:4,manutencao_banheiros:5}; s.selectedIndex = map[el.dataset.service]||0; }
   });
   document.querySelectorAll('details[data-track]').forEach(function(d){
     d.addEventListener('toggle', function(){ if (d.open) track('faq_open', {question: d.querySelector('summary').textContent}); });
