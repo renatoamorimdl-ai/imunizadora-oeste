@@ -45,7 +45,12 @@
     whatsapp: '558433216073',       // WhatsApp comercial (DDI+DDD+número)
     phone: '+558433216073',
     leadWebhook: '',                // opcional: URL (Make/n8n/Zapier/CRM) que recebe o lead em JSON
-    sheetWebhook: ''                // URL do Apps Script (/exec) que grava os leads do WhatsApp na planilha Google
+    sheetWebhook: '',               // URL do Apps Script (/exec) que grava os leads do WhatsApp na planilha Google
+    // Alternativa sem Apps Script: Google Forms ligado à planilha (preencha action e os IDs entry.XXXX)
+    sheetForm: {
+      action: '',                   // https://docs.google.com/forms/d/e/<ID>/formResponse
+      fields: { nome: '', whatsapp: '', local_clique: '', campanha: '', click_id: '', pagina: '' }
+    }
   };
   // Consent Mode v2 (LGPD) – padrão negado até o aceite
   window.dataLayer = window.dataLayer || [];

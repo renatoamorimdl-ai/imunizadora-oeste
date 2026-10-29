@@ -82,6 +82,17 @@
     if (C.sheetWebhook) {
       try { fetch(C.sheetWebhook, {method: 'POST', mode: 'no-cors', keepalive: true, body: JSON.stringify(lead)}); } catch(err){}
     }
+    var F = C.sheetForm;
+    if (F && F.action) {
+      var vals = {
+        nome: lead.nome, whatsapp: lead.whatsapp, local_clique: lead.local_clique, pagina: lead.pagina,
+        campanha: [lead.utm_source, lead.utm_medium, lead.utm_campaign, lead.utm_term, lead.utm_content].filter(Boolean).join(' / '),
+        click_id: lead.gclid ? 'gclid:' + lead.gclid : (lead.fbclid ? 'fbclid:' + lead.fbclid : '')
+      };
+      var body = new URLSearchParams();
+      Object.keys(F.fields).forEach(function(k){ if (F.fields[k]) body.append(F.fields[k], vals[k] || ''); });
+      try { fetch(F.action, {method: 'POST', mode: 'no-cors', keepalive: true, body: body}); } catch(err){}
+    }
     dl.push({user_data: {phone_number: '+55' + tel}});
     track('generate_lead', {form_id: 'whatsapp', click_location: waCtx.loc, value: 1, currency: 'BRL'});
     track('click_whatsapp', {click_location: waCtx.loc});

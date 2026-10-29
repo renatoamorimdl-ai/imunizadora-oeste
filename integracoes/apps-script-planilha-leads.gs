@@ -1,15 +1,18 @@
 /**
+ * @OnlyCurrentDoc
+ *
  * Recebe os leads do site (janela do WhatsApp) e grava na planilha
- * "Leads Site - Imunizadora Oeste".
+ * "Leads Site - Imunizadora Oeste". Acessa SOMENTE esta planilha.
  *
  * Instalação (uma vez):
  * 1. Abra a planilha > Extensões > Apps Script.
- * 2. Apague o conteúdo do editor, cole este arquivo e salve.
- * 3. Implantar > Nova implantação > tipo "App da Web".
- *    - Executar como: Eu
- *    - Quem pode acessar: Qualquer pessoa
- * 4. Autorize o acesso e copie a URL terminada em /exec.
- * 5. Cole essa URL em sheetWebhook, no SITE_CONFIG do site.
+ * 2. Engrenagem (Configurações do projeto) > marque
+ *    "Mostrar arquivo de manifesto appsscript.json no editor".
+ * 3. Em appsscript.json, cole o conteúdo de integracoes/appsscript.json.
+ * 4. Em Código.gs, apague tudo, cole este arquivo e salve.
+ * 5. Implantar > Nova implantação > tipo "App da Web"
+ *    (Executar como: Eu · Quem pode acessar: Qualquer pessoa).
+ * 6. Autorize e copie a URL terminada em /exec.
  */
 var ABA = 'Página1';
 var COLUNAS = [
@@ -19,11 +22,9 @@ var COLUNAS = [
 ];
 
 function doPost(e) {
-  var lock = LockService.getScriptLock();
-  lock.waitLock(10000);
   try {
     var dados = JSON.parse(e.postData.contents);
-    var aba = SpreadsheetApp.getActive().getSheetByName(ABA);
+    var aba = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(ABA);
     if (aba.getLastRow() === 0) {
       aba.appendRow(COLUNAS);
       aba.setFrozenRows(1);
@@ -32,7 +33,5 @@ function doPost(e) {
     return ContentService.createTextOutput('ok');
   } catch (err) {
     return ContentService.createTextOutput('erro: ' + err);
-  } finally {
-    lock.releaseLock();
   }
 }
