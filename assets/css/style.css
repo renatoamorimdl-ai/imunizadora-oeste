@@ -56,7 +56,8 @@ nav.main a:hover{color:var(--blue)}
 .hero-text{padding:clamp(40px,6vw,80px) clamp(24px,5vw,72px) clamp(40px,5vw,72px) max(var(--gut),calc((100vw - 1240px)/2));display:flex;flex-direction:column;justify-content:center}
 .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:0 0 28px}
 .kicker .bar{width:28px;height:3px;background:var(--red)}
-.hero h1{font-size:clamp(2.4rem,4.4vw,4rem);font-weight:800;line-height:1;color:var(--navy);max-width:15ch}
+.hero h1{font-size:min(3.6rem,3.5vw);font-weight:800;line-height:1.02;color:var(--navy)}
+.hero h1 .ln{display:block;white-space:nowrap}
 .hero h1 .hl{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:.1em;text-underline-offset:.12em;text-decoration-skip-ink:none}
 .hero .lead{font-size:clamp(1.02rem,1.4vw,1.18rem);color:var(--ink-2);max-width:52ch;margin:28px 0 36px}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
@@ -209,6 +210,23 @@ footer.site a:hover{color:#fff}
 .cookie button{font:inherit;font-weight:600;padding:8px 14px;cursor:pointer;border:1.5px solid var(--ink);background:#fff;border-radius:2px}
 .cookie button.ok{background:var(--navy);border-color:var(--navy);color:#fff}
 
+/* Modal WhatsApp */
+.wa-modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:16px}
+.wa-modal[hidden]{display:none}
+.wa-backdrop{position:absolute;inset:0;background:rgba(10,26,54,.72)}
+.wa-box{position:relative;width:min(420px,100%);background:#fff;padding:32px 28px 24px;display:flex;flex-direction:column;border-top:4px solid var(--wa)}
+.wa-box h2{font-size:1.7rem;margin-bottom:6px}
+.wa-box .num{margin-bottom:10px}
+.wa-sub{margin:0 0 18px;color:var(--ink-2);font-size:.95rem}
+.wa-box label{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
+.wa-box input{font:inherit;font-size:1rem;padding:11px 0;border:0;border-bottom:1.5px solid var(--rule);border-radius:0;margin-bottom:16px;background:transparent;color:var(--ink)}
+.wa-box input:focus{outline:none;border-bottom-color:var(--wa)}
+.wa-box .btn{margin:6px 0 12px}
+.btn-wa-solid{background:var(--wa);color:#fff}
+.btn-wa-solid:hover{background:#178a48}
+.wa-x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:1.8rem;line-height:1;color:var(--mute);cursor:pointer;padding:6px}
+body.wa-open{overflow:hidden}
+
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
@@ -224,6 +242,7 @@ footer.site a:hover{color:#fff}
   .menu-btn{margin-left:0}
 }
 @media (max-width:900px){
+  .hero h1{font-size:min(3.4rem,8.4vw)}
   .hero{grid-template-columns:minmax(0,1fr)}
   .hero-text{padding:56px var(--gut) 48px}
   .hero-media{min-height:0;aspect-ratio:16/10}
@@ -256,7 +275,7 @@ footer.site a:hover{color:#fff}
   .svc-row{grid-template-columns:36px minmax(0,1fr) 40px;gap:12px}
   .svc-go{width:40px;height:40px}
   .svc-media{grid-template-columns:1fr}
-  .svc-media figure+figure{display:none}
+  .svc-media{gap:12px}
   .segs li:nth-child(2n),.quote:nth-child(2n){padding-left:0;border-left:0}
   .quote{border-bottom:1px solid var(--rule)}
   .spec>div{grid-template-columns:1fr;gap:4px}

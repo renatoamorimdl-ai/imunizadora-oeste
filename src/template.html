@@ -44,7 +44,8 @@
     metaPixelId: '000000000000000',
     whatsapp: '558433216073',       // WhatsApp comercial (DDI+DDD+número)
     phone: '+558433216073',
-    leadWebhook: ''                 // opcional: URL (Make/n8n/Zapier/CRM) que recebe o lead em JSON
+    leadWebhook: '',                // opcional: URL (Make/n8n/Zapier/CRM) que recebe o lead em JSON
+    sheetWebhook: ''                // URL do Apps Script (/exec) que grava os leads do WhatsApp na planilha Google
   };
   // Consent Mode v2 (LGPD) – padrão negado até o aceite
   window.dataLayer = window.dataLayer || [];
@@ -197,7 +198,7 @@
   <section class="hero" id="inicio" aria-labelledby="h1">
     <div class="hero-text">
       <p class="kicker"><span class="bar"></span>Limpa fossa e banheiros químicos · Mossoró/RN</p>
-      <h1 id="h1">Tradição, confiança e compromisso ambiental desde <span class="hl">1978</span>.</h1>
+      <h1 id="h1"><span class="ln">Tradição, confiança e</span> <span class="ln">compromisso ambiental</span> <span class="ln">desde <span class="hl">1978</span>.</span></h1>
       <p class="lead">Limpeza de fossas sépticas, desentupimento a vácuo, coleta de efluentes industriais e locação de banheiros químicos para residências, empresas e órgãos públicos do Oeste Potiguar.</p>
       <div class="ctas">
         <a href="#orcamento" class="btn btn-solid btn-lg" data-track="cta_click" data-loc="hero">Solicitar orçamento <svg><use href="#i-arrow"/></svg></a>
@@ -273,7 +274,7 @@
           </li>
         </ol>
         <div class="svc-media reveal">
-          <figure><img src="{{IMG:limpeza-de-fossa-residencial-mossoro}}" alt="Limpeza de fossa séptica com caminhão de sucção em Mossoró" width="1200" height="896" loading="lazy"><figcaption>Limpeza de fossas sépticas</figcaption></figure>
+          <figure><img src="{{IMG:limpeza-fossa-equipe-imunizadora-oeste}}" alt="Equipe da Imunizadora Oeste fazendo limpeza de fossa séptica com caminhão de sucção" width="1536" height="1024" loading="lazy"><figcaption>Limpeza de fossas sépticas</figcaption></figure>
           <figure><img src="{{IMG:banheiro-quimico-eventos-mossoro}}" alt="Locação de banheiros químicos para eventos e obras em Mossoró" width="1200" height="896" loading="lazy"><figcaption>Banheiros químicos</figcaption></figure>
         </div>
       </div>
@@ -544,6 +545,23 @@
   <a href="tel:+558433216073" class="mb-call" data-track="click_phone" data-loc="mobile_bar"><svg><use href="#i-phone"/></svg>Ligar</a>
   <a href="#" class="mb-wa js-wa" data-track="click_whatsapp" data-loc="mobile_bar"><svg><use href="#i-wa"/></svg>WhatsApp</a>
 </nav>
+
+<div class="wa-modal" id="wa-modal" role="dialog" aria-modal="true" aria-labelledby="wa-title" hidden>
+  <div class="wa-backdrop" data-wa-close></div>
+  <form class="wa-box" id="wa-form" novalidate>
+    <button type="button" class="wa-x" aria-label="Fechar" data-wa-close>&times;</button>
+    <p class="num">Atendimento via WhatsApp</p>
+    <h2 id="wa-title">Fale com a Imunizadora Oeste</h2>
+    <p class="wa-sub">Informe seu nome e WhatsApp para agilizarmos o atendimento.</p>
+    <label for="wa-nome">Nome *</label>
+    <input id="wa-nome" name="nome" autocomplete="name" required>
+    <label for="wa-tel">WhatsApp *</label>
+    <input id="wa-tel" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(84) 9 0000-0000" required>
+    <input class="hp" type="text" name="empresa_site" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="btn btn-wa-solid btn-lg"><svg><use href="#i-wa"/></svg>Ir para WhatsApp</button>
+    <p class="form-legal">Seus dados são tratados conforme a LGPD e usados apenas para este atendimento.</p>
+  </form>
+</div>
 
 <div class="cookie" id="cookie" role="dialog" aria-label="Aviso de cookies">
   <p>Usamos cookies para medir o desempenho do site e melhorar nossos anúncios.</p>

@@ -15,8 +15,14 @@ MORPHIX = {
 }
 WIDTHS = [640, 1080, 1920]
 def opt(name, w): return f'/_vercel/image?url={quote(MORPHIX[name], safe="")}&amp;w={w}&amp;q=75'
+# Fotos hospedadas no próprio site (já otimizadas em WebP nas larguras abaixo)
+LOCAL = {'limpeza-fossa-equipe-imunizadora-oeste': [640, 1080, 1536]}
 def img_attrs(m):
     name = m.group(1)
+    if name in LOCAL:
+        ws = LOCAL[name]
+        srcset = ', '.join(f'/assets/img/{name}-{w}.webp {w}w' for w in ws)
+        return f'src="/assets/img/{name}-{ws[1]}.webp" srcset="{srcset}" sizes="(max-width: 900px) 100vw, 40vw"'
     sizes = '(max-width: 900px) 100vw, 50vw'
     srcset = ', '.join(f'{opt(name, w)} {w}w' for w in WIDTHS)
     return f'src="{opt(name, 1080)}" srcset="{srcset}" sizes="{sizes}"'

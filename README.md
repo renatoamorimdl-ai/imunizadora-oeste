@@ -18,3 +18,11 @@ Site estático (HTML/CSS/JS puro) da Imunizadora Oeste, Mossoró-RN. Hospedado n
 
 ## Domínio próprio
 Ao conectar o domínio, troque `imunizadora-oeste.vercel.app` em `src/template.html`, `robots.txt` e `sitemap.xml`.
+
+## Leads do WhatsApp na planilha Google
+Os botões de WhatsApp abrem uma janela que pede Nome e WhatsApp antes de ir para a conversa.
+Os dados são enviados para a planilha "Leads Site - Imunizadora Oeste" por um Apps Script:
+1. Na planilha: Extensões > Apps Script, cole `integracoes/apps-script-planilha-leads.gs` e salve.
+2. Implantar > Nova implantação > App da Web (Executar como: Eu · Acesso: Qualquer pessoa).
+3. Copie a URL `/exec` para `sheetWebhook` no `SITE_CONFIG` de `src/template.html` e rode `python3 build.py`.
+Eventos: `whatsapp_form_open`, `generate_lead` (form_id `whatsapp`) e `click_whatsapp`.
