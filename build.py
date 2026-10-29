@@ -26,7 +26,7 @@ html = html.replace('<link rel="preload" as="image" href="{{IMG:caminhao-limpa-f
 html = re.sub(r'src="\{\{IMG:([\w-]+)\}\}"', img_attrs, html)
 # Versionamento de CSS/JS: a URL muda a cada alteração, evitando cache desatualizado no navegador
 import hashlib
-for asset in ('assets/css/style.css', 'assets/js/main.js'):
+for asset in ('assets/css/style.css', 'assets/js/main.js', 'assets/img/logo-imunizadora-oeste.svg', 'assets/img/logo-imunizadora-oeste-branco.svg'):
     v = hashlib.sha1((root / asset).read_bytes()).hexdigest()[:10]
     html = html.replace(f'"/{asset}"', f'"/{asset}?v={v}"')
 assert '{{' not in html

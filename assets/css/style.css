@@ -38,7 +38,7 @@ h1,h2,h3{font-family:var(--display);font-stretch:80%;letter-spacing:-.015em;marg
 /* Header */
 header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--rule)}
 .head{display:flex;align-items:center;gap:28px;height:76px}
-.brand img{height:44px;width:auto}
+.brand img{height:50px;width:auto}
 nav.main{margin-left:auto}
 nav.main ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
 nav.main a{display:block;padding:8px 10px;font-size:.9rem;font-weight:500;text-decoration:none;color:var(--ink-2)}
@@ -191,7 +191,7 @@ form.lead.sent .form-ok{display:block}
 footer.site{background:var(--navy-2);color:#93a3c0;padding:56px 0 24px;font-size:.92rem;border-top:1px solid var(--rule-dk)}
 .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
 .foot p{max-width:34ch;margin:18px 0 0}
-.foot .brand img{height:46px}
+.foot .brand img{height:54px}
 footer.site h4{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:6px 0 16px}
 footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 footer.site a{text-decoration:none;color:#cfd8ea}
@@ -247,7 +247,7 @@ footer.site a:hover{color:#fff}
   .head{height:64px}
   html{scroll-padding-top:64px}
   nav.main{inset:64px 0 auto 0}
-  .brand img{height:36px}
+  .brand img{height:40px}
   .head-phone{display:none}
   .head-contact .btn{padding:9px 14px;font-size:.85rem}
   .facts-grid>div{padding:18px 14px}
